@@ -51,6 +51,7 @@ def main():
     parser.add_argument('-ddtype', '--data_driver_type', type=str)
     parser.add_argument('-project', '--test_project', type=str)
     parser.add_argument('-url', '--test_url', type=str)
+    parser.add_argument('-srnginx', '--send_report_nginx', type=str)
     
     args = parser.parse_args()
 
@@ -63,7 +64,8 @@ def main():
         'REPORT_TYPE': args.report_type,
         'DATA_DRIVER_TYPE': args.data_driver_type,
         'TEST_PROJECT': args.test_project,
-        'TEST_URL': args.test_url
+        'TEST_URL': args.test_url,
+        'SEND_REPORT_NGINX': args.send_report_nginx
     }
     print(config_args)
 
