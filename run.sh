@@ -38,5 +38,5 @@ echo "Test Starting..."
 echo "############################################################"
 echo ""
 
-# python3 ./RunMain/run.py -m smoke 
+python3 ./RunMain/run.py
 
