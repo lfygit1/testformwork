@@ -13,6 +13,7 @@ echo "############################################################"
 echo "Build Argument"
 echo "############################################################"
 echo ""
+echo "nginx_host: $nginx_host"
 python3 /ExtTools/buildargument.py --nginx_host $nginx_host
 
 
