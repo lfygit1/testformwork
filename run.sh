@@ -3,8 +3,8 @@
 echo "############################################################"
 echo "Installing Requirements..."
 echo "############################################################"
-echo ""
-pip install -r ./requirements.txt 
+echo "pip install -r ./requirements.txt --break-system-packages"
+pip install -r ./requirements.txt --break-system-packages
 
 echo "############################################################"
 echo "Test Starting..."
