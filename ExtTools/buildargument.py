@@ -47,9 +47,6 @@ def write_config_ini(config_path, *args, **kwargs):
     """ 写入-配置文件.ini """
     config = RawConfigParser()    
     config.read(config_path, encoding='utf-8')
-    
-    for key, value in kwargs.items():
-        print("qqqqqqqqqqqqqqqq", key, value)
 
     mappings = {
         'NGINX_HOST': ('nginx配置', 'host'),
