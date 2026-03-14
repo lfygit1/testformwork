@@ -20,7 +20,6 @@ pip install -r ./requirements.txt --break-system-packages
 echo "############################################################"
 echo "Build Argument"
 echo "############################################################"
-echo ""
 python3 ./ExtTools/buildargument.py \
   --nginx_host "$nginx_host" \
   --nginx_port "$nginx_port" \
@@ -31,7 +30,6 @@ python3 ./ExtTools/buildargument.py \
   --data_driver_type "$data_driver_type" \
   --test_project "$test_project" \
   --test_url "$test_url"
-
 
 echo "############################################################"
 echo "Test Starting..."

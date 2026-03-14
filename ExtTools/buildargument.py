@@ -16,20 +16,19 @@ from configparser import RawConfigParser
 from Base.basePath import BasePath
 
 
-
 def read_config_ini(config_path):
     """ 读取-配置文件.ini """
     config = RawConfigParser()    # 创建RawConfigParser对象
     config.read(config_path, encoding='utf-8')
     return config
 
-def write_config_ini(config_path, section, option, value):
+def write_config_ini(config_path, *args, **kwargs):
     """ 写入-配置文件.ini """
     config = RawConfigParser()    
     config.read(config_path, encoding='utf-8')
-    config.set(section, option, value)
-    with open(config_path, 'w', encoding='utf-8') as f:
-        config.write(f)
+    
+    for key, value in kwargs.items():
+        print("qqqqqqqqqqqqqqqq", key, value)
 
 
 def main():
@@ -54,18 +53,21 @@ def main():
     parser.add_argument('-url', '--test_url', type=str)
     
     args = parser.parse_args()
-    
-    print(
-    f"nginx_host: {args.nginx_host}\n"
-    f"nginx_port: {args.nginx_port}\n"
-    f"nginx_user: {args.nginx_user}\n"
-    f"nginx_allure_path: {args.nginx_allure_path}\n"
-    f"auto_type: {args.auto_type}\n"
-    f"report_type: {args.report_type}\n"
-    f"data_driver_type: {args.data_driver_type}\n"
-    f"test_project: {args.test_project}\n"
-    f"test_url: {args.test_url}"
-)
+
+    config_args = {    
+        'NGINX_HOST': args.nginx_host,
+        'NGINX_PORT': args.nginx_port,
+        'NGINX_USER': args.nginx_user,
+        'NGINX_ALLURE_PATH': args.nginx_allure_path,
+        'AUTO_TYPE': args.auto_type,
+        'REPORT_TYPE': args.report_type,
+        'DATA_DRIVER_TYPE': args.data_driver_type,
+        'TEST_PROJECT': args.test_project,
+        'TEST_URL': args.test_url
+    }
+    print(config_args)
+
+    write_config_ini(config_path=BasePath.CONFIG_FILE, **config_args)
     
 
 if __name__ == '__main__':
