@@ -45,10 +45,27 @@ def main():
     
     parser.add_argument('-nghost', '--nginx_host', type=str, help='nginx的IP地址')
     parser.add_argument('-ngport', '--nginx_port', type=str)
+    parser.add_argument('-nguser', '--nginx_user', type=str)
+    parser.add_argument('-ngpath', '--nginx_allure_path', type=str)
+    parser.add_argument('-auto', '--auto_type', type=str)
+    parser.add_argument('-report', '--report_type', type=str)
+    parser.add_argument('-ddtype', '--data_driver_type', type=str)
+    parser.add_argument('-project', '--test_project', type=str)
+    parser.add_argument('-url', '--test_url', type=str)
     
     args = parser.parse_args()
     
-    print(f"sdljgaslkdfjgbnalskdfjbngliaksjdf1111111111111111111111111{args.nginx_host}")
+    print(
+    f"nginx_host: {args.nginx_host}\n"
+    f"nginx_port: {args.nginx_port}\n"
+    f"nginx_user: {args.nginx_user}\n"
+    f"nginx_allure_path: {args.nginx_allure_path}\n"
+    f"auto_type: {args.auto_type}\n"
+    f"report_type: {args.report_type}\n"
+    f"data_driver_type: {args.data_driver_type}\n"
+    f"test_project: {args.test_project}\n"
+    f"test_url: {args.test_url}"
+)
     
 
 if __name__ == '__main__':
