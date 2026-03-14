@@ -13,7 +13,7 @@ echo "############################################################"
 echo "Build Argument"
 echo "############################################################"
 echo ""
-# python3 /ExtTools/buildargument.py 
+python3 /ExtTools/buildargument.py --nginx_host $nginx_host
 
 
 
@@ -22,6 +22,5 @@ echo "Test Starting..."
 echo "############################################################"
 echo ""
 
-echo "参数1: $nginx_host"
 # python3 ./RunMain/run.py -m smoke 
 

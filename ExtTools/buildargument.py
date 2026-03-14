@@ -33,8 +33,23 @@ def write_config_ini(config_path, section, option, value):
 
 
 def main():
-    config = read_config_ini(BasePath.CONFIG_FILE)
-    print(config['客户端自动化配置']['confidence'])
+    parser = argparse.ArgumentParser(
+        description='构建参数配置工具',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+                    示例:
+                    python buildargument.py --env test
+                    python buildargument.py --config ./config.ini --env prod
+                '''
+    )
+    
+    parser.add_argument('-nghost', '--nginx_host', type=str, help='nginx的IP地址')
+    parser.add_argument('-ngport', '--nginx_port', type=str)
+    
+    args = parser.parse_args()
+    
+    print(f"sdljgaslkdfjgbnalskdfjbngliaksjdf1111111111111111111111111{args.nginx_host}")
+    
 
 if __name__ == '__main__':
     main()
