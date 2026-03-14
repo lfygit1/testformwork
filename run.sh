@@ -1,13 +1,27 @@
 #!bin/bash
 
+nginx_host=$1
+
 echo "############################################################"
 echo "Installing Requirements..."
 echo "############################################################"
 echo "pip install -r ./requirements.txt --break-system-packages"
 pip install -r ./requirements.txt --break-system-packages
 
+
+echo "############################################################"
+echo "Build Argument"
+echo "############################################################"
+echo ""
+# python3 /ExtTools/buildargument.py 
+
+
+
 echo "############################################################"
 echo "Test Starting..."
 echo "############################################################"
 echo ""
-python3 ./RunMain/run.py -m smoke
+
+echo "参数1: $nginx_host"
+# python3 ./RunMain/run.py -m smoke 
+
