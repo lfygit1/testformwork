@@ -4,7 +4,7 @@ echo "############################################################"
 echo "Installing Requirements..."
 echo "############################################################"
 echo ""
-pip install -r requirements.txt 
+pip install -r ./requirements.txt 
 
 echo "############################################################"
 echo "Test Starting..."
