@@ -9,6 +9,7 @@ report_type=$6
 data_driver_type=$7
 test_project=$8
 test_url=$9
+send_report_nginx=$10
 
 echo "############################################################"
 echo "Installing Requirements..."
@@ -29,7 +30,8 @@ python3 ./ExtTools/buildargument.py \
   --report_type "$report_type" \
   --data_driver_type "$data_driver_type" \
   --test_project "$test_project" \
-  --test_url "$test_url"
+  --test_url "$test_url" \
+  --send_report_nginx "$send_report_nginx"
 
 echo "############################################################"
 echo "Test Starting..."
